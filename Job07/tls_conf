@@ -1,0 +1,9 @@
+<IfModule mod_tls.c>
+  TLSEngine      on
+  TLSLog        /var/log/proftpd/tls.log
+  TLSProtocol      TLSv1 TLSv1.1 TLSv1.2
+  TLSRSACertificateFile    /etc/proftpd/ssl/certs/proftpd.crt.pem
+  TLSRSACertificateKeyFile  /etc/proftpd/ssl/private/proftpd.key.pem
+  TLSVerifyClient      off
+  TLSRequired      on
+</IfModule>
