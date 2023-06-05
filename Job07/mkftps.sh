@@ -15,7 +15,7 @@ curl -o /etc/proftpd/modules.conf "$repos_path/modules_conf"
 curl -o /etc/proftpd/tls.conf "$repos_path/tls_conf"
 
 # Configuration du chiffrement SSL.
-mkdir -p /etc/proftpd/ssl/{private,certs}
+mkdir -p /etc/proftpd/ssl/private && mkdir /etc/proftpd/ssl/certs
 
 openssl req \
     -new -x509 -days 365 -nodes \
