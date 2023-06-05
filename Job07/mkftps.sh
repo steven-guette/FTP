@@ -21,7 +21,7 @@ openssl req \
     -new -x509 -days 365 -nodes \
     -out /etc/proftpd/ssl/certs/proftpd.crt.pem \
     -keyout /etc/proftpd/ssl/private/proftpd.key.pem \
-    -subj "/C=France/ST=PACA/L=Cannes/O=WhiteCorp/OU=WhiteCorp/CN=WhiteCat/emailAddress=whitecat@gmail.com"
+    -subj "/C=FR/ST=PACA/L=Cannes/O=WhiteCorp/OU=WhiteCorp/CN=WhiteCat/emailAddress=whitecat@gmail.com"
 
 # Redémarrage du service `proftpd`.
 service proftpd restart
