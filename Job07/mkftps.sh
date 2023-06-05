@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repos_path='https://raw.githubusercontent.com/steven-guette/FTP/main'
+repos_path='https://raw.githubusercontent.com/steven-guette/FTP/Job07'
 
 # Mise à jour du fichier `sources_list.list` puis de la distribution.
 curl -o /etc/apt/sources.list "$repos_path/sources_list"
