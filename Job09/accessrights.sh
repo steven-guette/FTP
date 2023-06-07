@@ -32,10 +32,10 @@ while IFS="," read -r id firstname name pwd rights || read -r || [ -n "$id" ]; d
   home_directory="/home/$username"
 
   if [ "${rights^^}" = "ADMIN" ]; then
-    sudo useradd -m -G "sudo" -c "$user_description" -u "$id" -p "$pwd" \
+    useradd -m -G "sudo" -c "$user_description" -u "$id" -p "$pwd" \
         --shell "/bin/false" --home "$home_directory" "$username"
   else
-    sudo useradd -m -c "$user_description" -u "$id" -p "$pwd" \
+    useradd -m -c "$user_description" -u "$id" -p "$pwd" \
         --shell "/bin/false" --home "$home_directory" "$username"
   fi
 done < "$file_csv"
