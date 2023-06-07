@@ -1,5 +1,4 @@
 #!/bin/bash
 
-apt remove -y proftpd
+apt remove -y --purge proftpd
 apt autoremove -y
-rm -Rf /etc/proftpd
