@@ -12,7 +12,7 @@ trim() {
   echo "$1" | tr -d ' \r'
 }
 
-#file_csv=$(curl -k https://raw.githubusercontent.com/steven-guette/FTP/main/Job09/Resources/Userlist.csv)
+file_csv=$(curl -k https://raw.githubusercontent.com/steven-guette/FTP/main/Job09/Resources/Userlist.csv)
 
 while IFS="," read -r id firstname name pwd rights || read -r || [ -n "$id" ]; do
   id=$(trim "$id")
@@ -32,10 +32,8 @@ while IFS="," read -r id firstname name pwd rights || read -r || [ -n "$id" ]; d
   home_directory="/home/$username"
 
   if [ "${rights^^}" = "ADMIN" ]; then
-    useradd -m -G "sudo" -c "$user_description" -u "$id" -p "$pwd" \
-        --shell "/bin/false" --home "$home_directory" "$username"
+    useradd -m -G "sudo" -c "$user_description" -u "$id" -p "$pwd" --shell "/bin/false" --home "$home_directory" "$username"
   else
-    useradd -m -c "$user_description" -u "$id" -p "$pwd" \
-        --shell "/bin/false" --home "$home_directory" "$username"
+    useradd -m -c "$user_description" -u "$id" -p "$pwd" --shell "/bin/false" --home "$home_directory" "$username"
   fi
-done < $(curl -k "https://raw.githubusercontent.com/steven-guette/FTP/main/Job09/Resources/Userlist.csv")
+done < "$file_csv"
