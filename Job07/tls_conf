@@ -2,11 +2,11 @@
     TLSEngine                   on
     TLSLog                      /var/log/proftpd/tls.log
     TLSProtocol                 TLSv1.2
-    TLPProtocol                 TLSv1.3
+    TLSProtocol                 TLSv1.3
     TLSOptions                  NoSessionReuseRequired
     TLSRSACertificateFile       /etc/proftpd/ssl/certs/proftpd.crt.pem
     TLSRSACertificateKeyFile    /etc/proftpd/ssl/private/proftpd.key.pem
-    TLSRequireValidShell        off
+    RequireValidShell           no
     TLSVerifyClient             off
     TLSRequired                 on
 </IfModule>
