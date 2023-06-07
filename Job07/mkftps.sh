@@ -7,7 +7,7 @@ curl -ko /etc/apt/sources.list "$repos_path/sources_list"
 apt-get update -y && apt-get full-upgrade -y
 
 # Installation des modules qui seront nécessaires pour la suite.
-apt-get install openssl proftpd proftpd-mod-crypto
+apt-get install --yes proftpd proftpd-mod-crypto openssl
 
 # Mise à jour des fichiers de configuration de `proftpd`.
 curl -ko /etc/proftpd/proftpd.conf "$repos_path/proftpd_conf"
