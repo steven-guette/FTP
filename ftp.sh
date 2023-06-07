@@ -39,12 +39,15 @@ nano /etc/proftpd/tls.conf
 ## Configurer tls selon les besoins.
 
 apt-get install proftpd-mod-crypto
-mkdir -p /etc/proftpd/{private,certs}
+mkdir -p /etc/proftpd/ssl/private && mkdir /etc/proftpd/ssl/certs
 
 openssl req \
     -new -x509 -nodes -days 365 \
     -out /etc/proftpd/certs/proftpd.crt.pem \
     -keyout /etc/proftpd/private/proftpd.key.pem
+
+chmod 600 /etc/proftpd/ssl/private/*
+chmod 600 /etc/proftpd/ssl/certs/*
 
 service proftpd restart
 
