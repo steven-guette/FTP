@@ -20,7 +20,7 @@ nano /etc/proftpd/proftpd.conf
 ssh root@'<server_addr>'
 
 adduser Merry --shell /bin/false --home /home/merry --force-badname
-adduser Pippin --shell /bin/false --home /home/pippin --foce-badname
+adduser Pippin --shell /bin/false --home /home/pippin --force-badname
 
 
 # JOB 04
