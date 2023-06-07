@@ -12,7 +12,7 @@ trim() {
   echo "$1" | tr -d ' \r'
 }
 
-file_csv=$(curl -k https://raw.githubusercontent.com/steven-guette/FTP/main/Job09/Resources/Userlist.csv)
+file_csv="https://raw.githubusercontent.com/steven-guette/FTP/main/Job09/Resources/Userlist.csv"
 
 while IFS="," read -r id firstname name pwd rights || read -r || [ -n "$id" ]; do
   id=$(trim "$id")
